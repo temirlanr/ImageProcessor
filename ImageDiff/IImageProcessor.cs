@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AsposeTask
+namespace ImageDiff
 {
     /// <summary>
-    /// Interface for Image Processor that compares two same images for differences
+    /// Interface for an image processor that compares two equally sized images for differences.
     /// </summary>
     /// <remarks>
     /// Images must be of the same size

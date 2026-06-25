@@ -1,0 +1,31 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageDiff", "ImageDiff\ImageDiff.csproj", "{753E8427-ED51-4E60-9BF2-1F624F6FE6EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageProcessorTest", "ImageProcessorTest\ImageProcessorTest.csproj", "{07E5A57B-D032-4BAD-8C28-63021011B56F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{753E8427-ED51-4E60-9BF2-1F624F6FE6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753E8427-ED51-4E60-9BF2-1F624F6FE6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753E8427-ED51-4E60-9BF2-1F624F6FE6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753E8427-ED51-4E60-9BF2-1F624F6FE6EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E5A57B-D032-4BAD-8C28-63021011B56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E5A57B-D032-4BAD-8C28-63021011B56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E5A57B-D032-4BAD-8C28-63021011B56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E5A57B-D032-4BAD-8C28-63021011B56F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46658953-77A9-4072-8335-F17A0151A050}
+	EndGlobalSection
+EndGlobal

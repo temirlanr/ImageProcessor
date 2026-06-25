@@ -1,42 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AsposeTask
+namespace ImageDiff
 {
     /// <summary>
-    /// Pixel Clusters for better working with different pixels in two images
+    /// A rectangular region of differing pixels. Bounds and size are accumulated as pixels are added,
+    /// so a cluster keeps only five integers regardless of how many pixels it covers.
     /// </summary>
     public class PixelCluster
     {
-        public int UpperPoint { get; private set; }
-        public int LowerPoint { get; private set; }
-        public int LeftPoint { get; private set; }
-        public int RightPoint { get; private set; }
+        /// <summary>Smallest Y coordinate (top edge) of the region.</summary>
+        public int UpperPoint { get; private set; } = int.MaxValue;
+
+        /// <summary>Largest Y coordinate (bottom edge) of the region.</summary>
+        public int LowerPoint { get; private set; } = int.MinValue;
+
+        /// <summary>Smallest X coordinate (left edge) of the region.</summary>
+        public int LeftPoint { get; private set; } = int.MaxValue;
+
+        /// <summary>Largest X coordinate (right edge) of the region.</summary>
+        public int RightPoint { get; private set; } = int.MinValue;
+
+        /// <summary>Number of pixels in the region.</summary>
         public int Size { get; private set; }
 
-        public List<int> XCoordinates { get; private set; }
-        public List<int> YCoordinates { get; private set; }
-
-        public PixelCluster()
-        {
-            XCoordinates = new List<int>();
-            YCoordinates = new List<int>();
-        }
-
         /// <summary>
-        /// Sets borders for Clusters
+        /// Adds a differing pixel, expanding the bounding box and increasing <see cref="Size"/>.
         /// </summary>
-        public void SetBorders()
+        /// <param name="x">Pixel X coordinate.</param>
+        /// <param name="y">Pixel Y coordinate.</param>
+        public void Add(int x, int y)
         {
-            UpperPoint = YCoordinates.Min();
-            LowerPoint = YCoordinates.Max();
-            RightPoint = XCoordinates.Max();
-            LeftPoint = XCoordinates.Min();
-            Size = XCoordinates.Count;
+            if (x < LeftPoint) LeftPoint = x;
+            if (x > RightPoint) RightPoint = x;
+            if (y < UpperPoint) UpperPoint = y;
+            if (y > LowerPoint) LowerPoint = y;
+            Size++;
         }
 
         public override string ToString()

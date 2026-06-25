@@ -1,4 +1,4 @@
-using AsposeTask;
+using ImageDiff;
 using NUnit.Framework;
 using System;
 using System.Drawing;
@@ -10,7 +10,7 @@ namespace ImageProcessorTest
     [TestFixture]
     public class Tests
     {
-        IImageProcessor processor;
+        IImageProcessor processor = null!;
 
         [SetUp]
         public void SetUp()
@@ -60,7 +60,6 @@ namespace ImageProcessorTest
             Assert.AreEqual(4, count);
         }
 
-        // For some reason I couldn't run this test on my PC
         [Test]
         public void Start_NotEqualImages_ThrowsArgumentException()
         {
